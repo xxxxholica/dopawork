@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- スタートアップ / APIキー設定画面 -->
+  <div id="view-setup" class="view-container">
+    <div class="setup-card">
+      <div class="setup-brand">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Dopawork</span>
+      </div>
+      <p class="setup-desc">作業ドーパミン中毒のための<br>知的な息抜き穴埋めパズル</p>
+      
+      <div class="setup-form">
+        <div class="input-group">
+          <input type="password" id="input-api-key" placeholder="APIキーを入力..." autocomplete="off">
+        </div>
+        <div id="setup-msg" class="setup-msg"></div>
+        <button type="button" id="btn-verify-key" class="btn-primary">APIキーを検証して始める</button>
+        <a id="btn-get-key" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="btn-link">Google AI StudioからAPIキーを取得 ↗</a>
+      </div>
+
+      <div class="setup-footer">
+        <span>キーはローカルにのみ安全に保存されます</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- メインキャンバス画面 -->
+  <div id="view-main" class="view-container" style="display: none;">
+    <header class="header">
+      <div class="brand">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Dopawork</span>
+      </div>
+    </header>
+
+    <!-- 生成中はcomic-gridを隠し、同じ場所にこのTipsボックスを表示する（ウィンドウサイズは変えない） -->
+    <div id="tips-stage" class="tips-stage" style="display: none;"></div>
+
+    <main id="comic-grid">
+      <div class="panel" id="panel-1">
+        <div class="panel-meta">01</div>
+        <div class="panel-content"></div>
+      </div>
+      <div class="panel" id="panel-2">
+        <div class="panel-meta">02</div>
+        <div class="panel-content"></div>
+      </div>
+      <div class="panel" id="panel-3">
+        <div class="panel-meta">03</div>
+        <div class="panel-content"></div>
+      </div>
+      <div class="panel" id="panel-4">
+        <div class="panel-meta">04</div>
+        <div class="panel-content"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <button type="button" id="btn-generate" class="btn-primary">スケッチを生成する</button>
+      <button type="button" id="btn-reroll" class="btn-icon" title="新しいお題を引く">↻</button>
+      <button type="button" id="btn-favorite" class="btn-icon" title="お気に入りに登録" style="display: none;">♡</button>
+      <button type="button" id="btn-save-image" class="btn-icon" title="画像を保存" style="display: none;">⬇</button>
+      <button type="button" id="btn-history" class="btn-icon" title="履歴を見る">▤</button>
+      <button type="button" id="btn-logout" class="btn-icon" title="ログアウト">⎋</button>
+    </footer>
+  </div>
+
+  <!-- 履歴（お気に入り登録した過去の4コマ）一覧画面 -->
+  <div id="view-history" class="view-container" style="display: none;">
+    <header class="header">
+      <div class="brand">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">履歴</span>
+      </div>
+    </header>
+
+    <div id="history-list" class="history-list"></div>
+
+    <footer class="footer">
+      <button type="button" id="btn-history-back" class="btn-ghost">← 戻る</button>
+    </footer>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

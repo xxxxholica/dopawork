@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Dopawork - 詰め4コマ",
+  "version": "1.0",
+  "description": "作業ドーパミン中毒のための知的な息抜き穴埋めパズル",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dopawork@local.dev",
+      "strict_min_version": "109.0"
+    }
+  },
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Dopawork"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ]
+}

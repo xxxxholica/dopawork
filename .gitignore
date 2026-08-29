@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node (in case tooling is added later)
+node_modules/
+npm-debug.log*
+
+# Build / packaging output
+*.zip
+*.xpi
+*.crx
+dist/
+build/
+
+# Local scratch / notes not meant for the repo
+_to_delete/
+
+# Env / secrets
+.env
+.env.*
